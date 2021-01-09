@@ -14,6 +14,13 @@ namespace Banking.Models
     
     public partial class UsersAccount
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public UsersAccount()
+        {
+            this.Beneficiaries = new HashSet<Beneficiary>();
+            this.Transactions = new HashSet<Transaction>();
+        }
+    
         public int Account_Number { get; set; }
         public Nullable<int> Customer_Id { get; set; }
         public string Customername { get; set; }
@@ -25,8 +32,11 @@ namespace Banking.Models
         public Nullable<System.TimeSpan> Logout_Time { get; set; }
         public Nullable<int> Reference_Id { get; set; }
         public Nullable<int> Otp { get; set; }
-        //public string Confirm_Login_Password { get; set; }
     
         public UserDetail UserDetail { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public ICollection<Beneficiary> Beneficiaries { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public ICollection<Transaction> Transactions { get; set; }
     }
 }

@@ -5,7 +5,7 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 using Banking.Models;
-using System.Web.Http.Cors; 
+using System.Web.Http.Cors;
 
 namespace Banking.Controllers
 {
